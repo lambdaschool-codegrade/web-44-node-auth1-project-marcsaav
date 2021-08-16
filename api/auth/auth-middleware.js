@@ -48,7 +48,7 @@ async function checkUsernameExists(req, res, next) {
   if(user[0]) {
     next()
   } else {
-    next({ status: 422, message: 'Username Taken'})
+    next({ status: 401, message: 'Invalid credentials'})
   }
 }
 
