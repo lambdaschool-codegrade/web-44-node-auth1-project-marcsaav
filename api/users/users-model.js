@@ -10,14 +10,14 @@ function find() {
   resolves to an ARRAY with all users that match the filter condition
  */
 function findBy(filter) {
-  return db('users').where({ filter })
+  return db('users').where({ filter }).first()
 }
 
 /**
   resolves to the user { user_id, username } with the given user_id
  */
 function findById(user_id) {
-  return db('users').where({ user_id }).select('user_id', 'username')
+  return db('users').where({ user_id }).select('user_id', 'username').first()
 }
 
 /**
